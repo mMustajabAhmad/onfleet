@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @token = token
     @opts = opts
 
-    html_content = render_email_template('devise/mailer/invitation_instructions')
+    html_content = render_email_template('devise_mailer/invitation_instructions')
 
     send_sendgrid_email(to: record.email, html_content: html_content)
   end
@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
     @token = token
     @opts = opts
 
-    html_content = render_email_template('devise/mailer/reset_password_instructions')
+    html_content = render_email_template('devise_mailer/reset_password_instructions')
 
     send_sendgrid_email(to: record.email, html_content: html_content)
   end
